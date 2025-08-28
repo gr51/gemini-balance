@@ -32,14 +32,12 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: grbox/gemini-balance # ✅ 确保这是你的 Docker Hub 用户名/仓库名
-
+          images: grbox/gemini-balance 
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          # ✅ 新增：指定要构建的平台
           platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
