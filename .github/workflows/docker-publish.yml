@@ -32,7 +32,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: softs2005/gemini-balance # ✅ 确保这是你的 Docker Hub 用户名/仓库名
+          images: grbox/gemini-balance # ✅ 确保这是你的 Docker Hub 用户名/仓库名
 
       - name: Build and push
         uses: docker/build-push-action@v5
